@@ -1,11 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
 body{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: forestgreen;
 }
 
 canvas{
-    border: 2px solid green;
-    background-color: darkgrey;
+    border: solid 4px white;
 }
