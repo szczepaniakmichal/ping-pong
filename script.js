@@ -7,7 +7,7 @@ canvas.height = 500;
 const cw = canvas.width;
 const ch = canvas.height;
 
-const ballSize = 20;
+const ballSize = 15;
 let ballX = cw/2-ballSize/2;
 let ballY = ch/2-ballSize/2;
 
@@ -26,7 +26,7 @@ function table() {
     ctx.fillRect(0,0,cw,ch)
 }
 
-// // draw the ball
+// draw the square ball
 // function ball() {
 //     ctx.fillStyle = 'white';
 //     ctx.fillRect(ballX, ballY, ballSize, ballSize);
@@ -34,8 +34,12 @@ function table() {
 
 // draw the ball
 function ball() {
-    ctx.fillStyle = 'white';
-    ctx.arc(ballX, ballY, ballSize, ballSize, Math.PI*2,true);
+    ctx.beginPath();
+    ctx.arc(ballX, ballY, ballSize, ballSize, Math.PI*2, true);
+    ctx.fillStyle = "blue";
+    ctx.fill(); 
+    //ctx.lineWidth = 5;
+    //ctx.strokeStyle = "red";
     ctx.stroke();
 }
 
