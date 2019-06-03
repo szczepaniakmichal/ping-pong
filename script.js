@@ -7,7 +7,7 @@ canvas.height = 500;
 const cw = canvas.width;
 const ch = canvas.height;
 
-const ballSize = 15;
+const ballSize = 8;
 let ballX = cw/2-ballSize/2;
 let ballY = ch/2-ballSize/2;
 
@@ -35,12 +35,12 @@ function table() {
 // draw the ball
 function ball() {
     ctx.beginPath();
-    ctx.arc(ballX, ballY, ballSize, ballSize, Math.PI*2, true);
-    ctx.fillStyle = "blue";
+    ctx.arc(ballX, ballY, ballSize, 0, Math.PI*2, true);
+    ctx.fillStyle = "yellow";
     ctx.fill(); 
     //ctx.lineWidth = 5;
     //ctx.strokeStyle = "red";
-    ctx.stroke();
+    //ctx.stroke();
 }
 
 // draw a player
