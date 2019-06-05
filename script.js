@@ -18,7 +18,7 @@ const playerX = 30;
 const aiX = 940;
 
 let playerY = ch/2 - paddleHeight/2;
-let aiY = playerY;
+let aiY = ch/2 - paddleHeight/2;
 
 const lineWidth = 6;
 const lineHeight = 16;
@@ -28,6 +28,8 @@ let ballSpeedY = 3;
 
 let topCanvas = canvas.offsetTop;
 console.log(topCanvas);
+
+let speedCounter = 0;
 
 // draw a table
 function table() {
@@ -47,6 +49,7 @@ function ball() {
     ballY += ballSpeedY;
     if ( ballY <= 0 || ballY + ballSize >= ch ){
         ballSpeedY = -ballSpeedY;
+        speedUp();
     }
     if ( ballX <= 0 || ballX + ballSize >= cw ){
         ballSpeedX = -ballSpeedX;
@@ -87,6 +90,33 @@ function playerPosition(e) {
     }
 }
 
+function aiPosition() {
+    if ( ballX > 500 ) {
+
+    }
+
+    if ( ballX < 500 && ballX > 150) {
+
+    }
+
+}
+
+function speedUp() {
+    if ( ballSpeedX > 0 && ballSpeedX < 16 ) {
+        ballSpeedX += .4;
+        console.log(ballSpeedX);
+    } else if ( ballSpeedX < 0 && ballSpeedX > -16 ) {
+        ballSpeedX -= .4;
+        console.log(ballSpeedX);
+    }
+
+    if ( ballSpeedY > 0 && ballSpeedY <16 ) {
+        ballSpeedY += .3;
+    } else if ( ballSpeedY < 0 && ballSpeedY > -16 ) {
+        ballSpeedY -=3;
+    }
+}
+
 canvas.addEventListener('mousemove', playerPosition)
 
 // draw all funcion
@@ -95,8 +125,9 @@ function start() {
     player();
     ai();
     ball();
+    aiPosition();
     //setInterval(ball, 60);
 }
 
-setInterval(start, 25);
+setInterval(start, 1000 / 60);
 //start();
