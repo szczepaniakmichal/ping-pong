@@ -68,7 +68,7 @@ function ball() {
         ballSpeedY = -ballSpeedY;
         speedUp();
     }
-    if ( ballX <= 0 || ballX + ballSize >= cw ){
+    else if ( ballX <= 0 || ballX + ballSize >= cw ){
         ballSpeedX = -ballSpeedX;
     }
     //ctx.lineWidth = 5;  //error const lineWidth = 6; in line 23. 
